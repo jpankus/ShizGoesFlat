@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<!-- saved from url=(0171)http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html -->
+<html lang="en" class="turbolinks-progress-bar"><head prefix="og: http://ogp.me/ns#"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<meta content="object" property="og:type">
+<meta content="GitLab" property="og:site_name">
+<meta content="1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet · master · The-Coding-Bootcamp / 11-16-Class-Content" property="og:title">
+<meta content="Official repository for all in-class exercises, homework assignments, and references." property="og:description">
+<meta content="http://unchar.bootcampcontent.com/assets/gitlab_logo-cdf021b35c4e6bb149e26460f26fae81e80552bc879179dd80e9e9266b14e894.png" property="og:image">
+<meta content="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tree/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet" property="og:url">
+<meta content="summary" property="twitter:card">
+<meta content="1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet · master · The-Coding-Bootcamp / 11-16-Class-Content" property="twitter:title">
+<meta content="Official repository for all in-class exercises, homework assignments, and references." property="twitter:description">
+<meta content="http://unchar.bootcampcontent.com/assets/gitlab_logo-cdf021b35c4e6bb149e26460f26fae81e80552bc879179dd80e9e9266b14e894.png" property="twitter:image">
+
+<title>1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html · master · The-Coding-Bootcamp / 11-16-Class-Content · GitLab</title>
+<meta content="Official repository for all in-class exercises, homework assignments, and references." name="description">
+<link rel="shortcut icon" type="image/x-icon" href="http://unchar.bootcampcontent.com/assets/favicon-075eba76312e8421991a0c1f89a89ee81678bcde72319dd3e8047e2a47cd3a42.ico">
+<link rel="stylesheet" media="all" href="./index_files/application-a8fe7046de5ec23d4b6bc1a3846a151bef395ffdc216ceb7400261d6a0e8cb06.css">
+<link rel="stylesheet" media="print" href="./index_files/print-68eed6d8135d858318821e790e25da27b2b4b9b8dbb1993fa6765d8e2e3e16ee.css">
+<script src="./index_files/application-b7f19ed7afecf1309a720261c0480f0b4ec7d56feb4135e2b6767f730e59944e.js.download"></script><style id="ace_editor.css">.ace_editor {position: relative;overflow: hidden;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;min-width: 100%;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;text-indent: -1em;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: inherit;color: inherit;z-index: 1000;opacity: 1;text-indent: 0;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;}.ace_text-layer {font: inherit !important;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_smooth-blinking .ace_cursor {-webkit-transition: opacity 0.18s;transition: opacity 0.18s;}.ace_editor.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}.ace_line .ace_fold {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {-webkit-transition: opacity 0.4s ease 0.05s;transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {-webkit-transition: opacity 0.05s ease 0.05s;transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style>    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }</style><style id="ace_searchbox">.ace_search {background-color: #ddd;border: 1px solid #cbcbcb;border-top: 0 none;max-width: 325px;overflow: hidden;margin: 0;padding: 4px;padding-right: 6px;padding-bottom: 0;position: absolute;top: 0px;z-index: 99;white-space: normal;}.ace_search.left {border-left: 0 none;border-radius: 0px 0px 5px 0px;left: 0;}.ace_search.right {border-radius: 0px 0px 0px 5px;border-right: 0 none;right: 0;}.ace_search_form, .ace_replace_form {border-radius: 3px;border: 1px solid #cbcbcb;float: left;margin-bottom: 4px;overflow: hidden;}.ace_search_form.ace_nomatch {outline: 1px solid red;}.ace_search_field {background-color: white;border-right: 1px solid #cbcbcb;border: 0 none;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: left;height: 22px;outline: 0;padding: 0 7px;width: 214px;margin: 0;}.ace_searchbtn,.ace_replacebtn {background: #fff;border: 0 none;border-left: 1px solid #dcdcdc;cursor: pointer;float: left;height: 22px;margin: 0;position: relative;}.ace_searchbtn:last-child,.ace_replacebtn:last-child {border-top-right-radius: 3px;border-bottom-right-radius: 3px;}.ace_searchbtn:disabled {background: none;cursor: default;}.ace_searchbtn {background-position: 50% 50%;background-repeat: no-repeat;width: 27px;}.ace_searchbtn.prev {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADFJREFUeNpiSU1NZUAC/6E0I0yACYskCpsJiySKIiY0SUZk40FyTEgCjGgKwTRAgAEAQJUIPCE+qfkAAAAASUVORK5CYII=);    }.ace_searchbtn.next {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAFCAYAAAB4ka1VAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADRJREFUeNpiTE1NZQCC/0DMyIAKwGJMUAYDEo3M/s+EpvM/mkKwCQxYjIeLMaELoLMBAgwAU7UJObTKsvAAAAAASUVORK5CYII=);    }.ace_searchbtn_close {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAcCAYAAABRVo5BAAAAZ0lEQVR42u2SUQrAMAhDvazn8OjZBilCkYVVxiis8H4CT0VrAJb4WHT3C5xU2a2IQZXJjiQIRMdkEoJ5Q2yMqpfDIo+XY4k6h+YXOyKqTIj5REaxloNAd0xiKmAtsTHqW8sR2W5f7gCu5nWFUpVjZwAAAABJRU5ErkJggg==) no-repeat 50% 0;border-radius: 50%;border: 0 none;color: #656565;cursor: pointer;float: right;font: 16px/16px Arial;height: 14px;margin: 5px 1px 9px 5px;padding: 0;text-align: center;width: 14px;}.ace_searchbtn_close:hover {background-color: #656565;background-position: 50% 100%;color: white;}.ace_replacebtn.prev {width: 54px}.ace_replacebtn.next {width: 27px}.ace_button {margin-left: 2px;cursor: pointer;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;overflow: hidden;opacity: 0.7;border: 1px solid rgba(100,100,100,0.23);padding: 1px;-moz-box-sizing: border-box;box-sizing:    border-box;color: black;}.ace_button:hover {background-color: #eee;opacity:1;}.ace_button:active {background-color: #ddd;}.ace_button.checked {border-color: #3399ff;opacity:1;}.ace_search_options{margin-bottom: 3px;text-align: right;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;-ms-user-select: none;user-select: none;}
+/*# sourceURL=ace/css/ace_searchbox */</style><style>html.turbolinks-progress-bar::before {
+  content: ' ';
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2000;
+  background-color: #0076ff;
+  height: 3px;
+  opacity: 0.99;
+  width: 0%;
+  transition: width 0ms ease-out, opacity 0ms ease-in;
+  transform: translate3d(0,0,0);
+}</style>
+<meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="Nx6g3qyQaIp77zoijpasb0kPpEnzRR3J6Fsdxq+VKxGrZt3RcaVX/+J+B+lt8yZWjT/n745yNFw3wrR0o2IIzQ==">
+<meta content="origin-when-cross-origin" name="referrer">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+<meta content="#474D57" name="theme-color">
+<link rel="apple-touch-icon" type="image/x-icon" href="http://unchar.bootcampcontent.com/assets/touch-icon-iphone-2d64ecc33893baab71adc15ff19a803a59911cc2651fb9d4d62af1379ff89aab.png">
+<link rel="apple-touch-icon" type="image/x-icon" href="http://unchar.bootcampcontent.com/assets/touch-icon-ipad-d08897d57e1bc9400024ac15465340e832a8e7b166b91624138d48ea2c739596.png" sizes="76x76">
+<link rel="apple-touch-icon" type="image/x-icon" href="http://unchar.bootcampcontent.com/assets/touch-icon-iphone-retina-81446c57f3351d1dacd0fb5f23ced74ba63d3878810bedea343999c6a12b3915.png" sizes="120x120">
+<link rel="apple-touch-icon" type="image/x-icon" href="http://unchar.bootcampcontent.com/assets/touch-icon-ipad-retina-e2a776da039936ac240e76615add47b25ab77c75a5fa2d1b3907f83d5502b911.png" sizes="152x152">
+<link color="rgb(226, 67, 41)" href="http://unchar.bootcampcontent.com/assets/logo-d36b5212042cebc89b96df4bf6ac24e43db316143e89926c0db839ff694d2de4.svg" rel="mask-icon">
+<meta content="/assets/msapplication-tile-49c9c46afd2ab9bbf35e69138bc62f8c31fa55584bd494956ac6e58e6aadc813.png" name="msapplication-TileImage">
+<meta content="#30353E" name="msapplication-TileColor">
+<link rel="alternate" type="application/atom+xml" title="11-16-Class-Content:master commits" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/commits/master.atom?private_token=Ayojg5xoHQ_oBybYoDEW">
+
+
+
+
+<style>
+  [data-user-is] {
+    display: none !important;
+  }
+  
+  [data-user-is="49"] {
+    display: block !important;
+  }
+  
+  [data-user-is="49"][data-display="inline"] {
+    display: inline !important;
+  }
+  
+  [data-user-is-not] {
+    display: block !important;
+  }
+  
+  [data-user-is-not][data-display="inline"] {
+    display: inline !important;
+  }
+  
+  [data-user-is-not="49"] {
+    display: none !important;
+  }
+</style>
+
+</head>
+
+<body class="ui_charcoal" data-group="" data-page="projects:blob:show" data-project="11-16-Class-Content">
+<script>
+//<![CDATA[
+window.gon={};gon.api_version="v3";gon.default_avatar_url="http://http/assets/no_avatar-07eeb128b993e74003e8664cff0b8e1e7234cec0443766a6763df32ca3472c23.png";gon.default_issues_tracker="gitlab";gon.max_file_size=10;gon.relative_url_root="";gon.shortcuts_path="/help/shortcuts";gon.user_color_scheme="white";gon.award_menu_url="/emojis";gon.current_user_id=49;gon.api_token="Ayojg5xoHQ_oBybYoDEW";
+//]]>
+</script>
+<script>
+  window.project_uploads_path = "/The-Coding-Bootcamp/11-16-Class-Content/uploads";
+  window.markdown_preview_path = "/The-Coding-Bootcamp/11-16-Class-Content/markdown_preview";
+</script>
+
+<header class="header-collapsed navbar navbar-fixed-top navbar-gitlab with-horizontal-nav">
+<div class="container-fluid">
+<div class="header-content">
+<button class="side-nav-toggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<i class="fa fa-bars"></i>
+</button>
+<button class="navbar-toggle" type="button">
+<span class="sr-only">Toggle navigation</span>
+<i class="fa fa-ellipsis-v"></i>
+</button>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="hidden-sm hidden-xs">
+<div class="has-location-badge search search-form">
+<form class="navbar-form" action="http://unchar.bootcampcontent.com/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+<div class="search-input-container">
+<div class="location-badge">This project</div>
+<div class="search-input-wrap">
+<div class="dropdown" data-url="/search/autocomplete">
+<input type="search" name="search" id="search" placeholder="Search" class="search-input dropdown-menu-toggle disabled" spellcheck="false" tabindex="1" autocomplete="off" data-toggle="dropdown" value="">
+<div class="dropdown-menu dropdown-select">
+<div class="dropdown-content"><ul>
+<li>
+<a class="is-focused dropdown-menu-empty-link">
+Loading...
+</a>
+</li>
+</ul>
+</div><div class="dropdown-loading"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+<i class="search-icon"></i>
+<i class="clear-icon js-clear-input"></i>
+</div>
+</div>
+</div>
+<input type="hidden" name="group_id" id="group_id">
+<input type="hidden" name="project_id" id="search_project_id" value="1">
+<input type="hidden" name="search_code" id="search_code" value="true">
+<script>
+  gl.projectOptions = gl.projectOptions || {};
+  gl.projectOptions["11-16-Class-Content"] = {
+    issuesPath: "/The-Coding-Bootcamp/11-16-Class-Content/issues",
+    mrPath: "/The-Coding-Bootcamp/11-16-Class-Content/merge_requests",
+    name: "11-16-Class-Content"
+  };
+</script>
+<script>
+  gl.dashboardOptions = {
+    issuesPath: "http://unchar.bootcampcontent.com/dashboard/issues",
+    mrPath: "http://unchar.bootcampcontent.com/dashboard/merge_requests"
+  };
+</script>
+<input type="hidden" name="repository_ref" id="repository_ref" value="master">
+
+<div class="search-autocomplete-opts hide" data-autocomplete-path="/search/autocomplete" data-autocomplete-project-id="1" data-autocomplete-project-ref="master"></div>
+</form>
+
+</div>
+
+</li>
+<li class="visible-sm visible-xs">
+<a title="Search" data-toggle="tooltip" data-placement="bottom" data-container="body" href="http://unchar.bootcampcontent.com/search"><i class="fa fa-search"></i>
+</a></li>
+<li>
+<a title="Todos" data-toggle="tooltip" data-placement="bottom" data-container="body" href="http://unchar.bootcampcontent.com/dashboard/todos"><i class="fa fa-bell fa-fw"></i>
+<span class="badge hidden todos-pending-count">
+0
+</span>
+</a></li>
+<li>
+<a title="New project" data-toggle="tooltip" data-placement="bottom" data-container="body" href="http://unchar.bootcampcontent.com/projects/new"><i class="fa fa-plus fa-fw"></i>
+</a></li>
+<li>
+<a class="logout" title="Sign out" data-toggle="tooltip" data-placement="bottom" data-container="body" rel="nofollow" data-method="delete" href="http://unchar.bootcampcontent.com/users/sign_out"><i class="fa fa-sign-out"></i>
+</a></li>
+</ul>
+</div>
+<h1 class="title"><a href="http://unchar.bootcampcontent.com/groups/The-Coding-Bootcamp">The-Coding-Bootcamp</a> / <a class="project-item-select-holder" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content">11-16-Class-Content</a><i data-target=".js-dropdown-menu-projects" data-toggle="dropdown" class="fa fa-chevron-down dropdown-toggle-caret js-projects-dropdown-toggle"></i></h1>
+<div class="header-logo">
+<a class="home" title="Dashboard" id="logo" href="http://unchar.bootcampcontent.com/"><svg width="36" height="36" id="tanuki-logo">
+  <path id="tanuki-right-ear" class="tanuki-shape" fill="#e24329" d="M2 14l9.38 9v-9l-4-12.28c-.205-.632-1.176-.632-1.38 0z"></path>
+  <path id="tanuki-left-ear" class="tanuki-shape" fill="#e24329" d="M34 14l-9.38 9v-9l4-12.28c.205-.632 1.176-.632 1.38 0z"></path>
+  <path id="tanuki-nose" class="tanuki-shape" fill="#e24329" d="M18,34.38 3,14 33,14 Z"></path>
+  <path id="tanuki-right-eye" class="tanuki-shape" fill="#fc6d26" d="M18,34.38 11.38,14 2,14 6,25Z"></path>
+  <path id="tanuki-left-eye" class="tanuki-shape" fill="#fc6d26" d="M18,34.38 24.62,14 34,14 30,25Z"></path>
+  <path id="tanuki-right-cheek" class="tanuki-shape" fill="#fca326" d="M2 14L.1 20.16c-.18.565 0 1.2.5 1.56l17.42 12.66z"></path>
+  <path id="tanuki-left-cheek" class="tanuki-shape" fill="#fca326" d="M34 14l1.9 6.16c.18.565 0 1.2-.5 1.56L18 34.38z"></path>
+</svg>
+
+</a></div>
+<div class="js-dropdown-menu-projects">
+<div class="dropdown-menu dropdown-select dropdown-menu-projects">
+<div class="dropdown-title"><span>Go to a project</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i class="fa fa-times dropdown-menu-close-icon"></i></button></div>
+<div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Search your projects" value=""><i class="fa fa-search dropdown-input-search"></i><i role="button" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div>
+<div class="dropdown-content"></div>
+<div class="dropdown-loading"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+</div>
+
+</div>
+</div>
+</header>
+
+<script>
+  var findFileURL = "/The-Coding-Bootcamp/11-16-Class-Content/find_file/master";
+</script>
+
+<div class="page-sidebar-collapsed page-with-sidebar">
+<div class="nicescroll sidebar-expanded sidebar-wrapper">
+<a class="nav-header-btn text-center toggle-nav-collapse" title="Open/Close" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#"><span class="sr-only">Toggle navigation</span>
+<i class="fa fa-bars"></i>
+</a>
+<ul class="nav nav-sidebar" tabindex="1" style="overflow: hidden; outline: none;">
+<li class="active home"><a title="Projects" class="dashboard-shortcuts-projects" href="http://unchar.bootcampcontent.com/dashboard/projects"><div class="icon-container">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M6,6 L12,6 L12,5 L6,5 L6,6 Z M6,8 L12,8 L12,7 L6,7 L6,8 Z M6,10 L12,10 L12,9 L6,9 L6,10 Z M6,12 L12,12 L12,11 L6,11 L6,12 Z M4,6 L5,6 L5,5 L4,5 L4,6 Z M4,8 L5,8 L5,7 L4,7 L4,8 Z M4,10 L5,10 L5,9 L4,9 L4,10 Z M4,12 L5,12 L5,11 L4,11 L4,12 Z M13,3 L10,3 L10,4 L6,4 L6,3 L3,3 L3,13 L13,13 L13,3 Z M2,14 L14,14 L14,2 L2,2 L2,14 Z M1,0 C0.448,0 0,0.448 0,1 L0,15 C0,15.552 0.448,16 1,16 L15,16 C15.552,16 16,15.552 16,15 L16,1 C16,0.448 15.552,0 15,0 L1,0 Z" fill="#7F7E7E"></path>
+    </g>
+</svg>
+</div>
+<span>
+Projects
+</span>
+</a></li><li class=""><a title="Todos" href="http://unchar.bootcampcontent.com/dashboard/todos"><div class="icon-container">
+<i class="fa fa-bell fa-fw"></i>
+</div>
+<span>
+Todos
+<span class="count">0</span>
+</span>
+</a></li><li class=""><a class="dashboard-shortcuts-activity" title="Activity" href="http://unchar.bootcampcontent.com/dashboard/activity"><div class="icon-container">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.3 (29802) - http://www.bohemiancoding.com/sketch -->
+    <title>path-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="_activity" fill="#7E7D7D">
+            <g id="Page-1">
+                <g id="path-1">
+                    <path d="M5,0 C4.448,0 4,0.448 4,1 L4,3 L1,3 C0.448,3 0,3.448 0,4 L0,9 C0,9.552 0.448,10 1,10 L5,10 L5,8 L11,8 L11,10 L15,10 C15.552,10 16,9.552 16,9 L16,4 C16,3.448 15.552,3 15,3 L12,3 L12,1 C12,0.448 11.552,0 11,0 L5,0 L5,0 L5,0 L5,0 Z M6,2.5 C6,2.224 6.224,2 6.5,2 L9.5,2 C9.776,2 10,2.224 10,2.5 C10,2.776 9.776,3 9.5,3 L6.5,3 C6.224,3 6,2.776 6,2.5 L6,2.5 L6,2.5 L6,2.5 Z M6,11 L10.001,11 L10.001,9 L6,9 L6,11 L6,11 L6,11 L6,11 Z M11,11 L11,12 L5,12 L5,11 L1,11 C0.448,11 0,11.448 0,12 L0,15 C0,15.552 0.448,16 1,16 L15,16 C15.552,16 16,15.552 16,15 L16,12 C16,11.448 15.552,11 15,11 L11,11 L11,11 L11,11 L11,11 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
+</div>
+<span>
+Activity
+</span>
+</a></li><li class=""><a title="Groups" href="http://unchar.bootcampcontent.com/dashboard/groups"><div class="icon-container">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill="#303030">
+            <path d="M15.6667,10.0105 L10.3337,10.0105 C10.1497,10.0105 9.9997,10.1775 9.9997,10.3845 L9.9997,15.6145 C9.9997,15.8215 10.1497,15.9885 10.3337,15.9885 L15.6667,15.9885 C15.8507,15.9885 15.9997,15.8215 15.9997,15.6145 L15.9997,10.3845 C15.9997,10.1775 15.8507,10.0105 15.6667,10.0105 L15.6667,10.0105 L15.6667,10.0105 Z M11.9997,14.0105 L13.9997,14.0105 L13.9997,12.0105 L11.9997,12.0105 L11.9997,14.0105 L11.9997,14.0105 Z" id="Fill-11"></path>
+            <path d="M5.6667,10.0105 L0.3337,10.0105 C0.1497,10.0105 -0.0003,10.1775 -0.0003,10.3845 L-0.0003,15.6145 C-0.0003,15.8215 0.1497,15.9885 0.3337,15.9885 L5.6667,15.9885 C5.8507,15.9885 5.9997,15.8215 5.9997,15.6145 L5.9997,10.3845 C5.9997,10.1775 5.8507,10.0105 5.6667,10.0105 L5.6667,10.0105 L5.6667,10.0105 Z M1.9997,14.0105 L3.9997,14.0105 L3.9997,12.0105 L1.9997,12.0105 L1.9997,14.0105 L1.9997,14.0105 Z" id="Fill-8"></path>
+            <polygon id="Stroke-1" points="12.5 7.5834 3.5 7.5834 3.5 9.5834 12.5 9.5834"></polygon>
+            <polygon id="Stroke-3" points="9 9.0834 9 5.0834 7 5.0834 7 9.0834"></polygon>
+            <polygon id="Stroke-4" points="4 11.0834 4 7.5834 2 7.5834 2 11.0834"></polygon>
+            <polygon id="Stroke-6" points="14 11.0834 14 7.5834 12 7.5834 12 11.0834"></polygon>
+            <path d="M11.6667,6.21724894e-15 L4.3337,6.21724894e-15 C4.1497,6.21724894e-15 3.9997,0.167 3.9997,0.374 L3.9997,6.604 C3.9997,6.811 4.1497,6.978 4.3337,6.978 L11.6667,6.978 C11.8507,6.978 11.9997,6.811 11.9997,6.604 L11.9997,0.374 C11.9997,0.167 11.8507,6.21724894e-15 11.6667,6.21724894e-15 L11.6667,6.21724894e-15 L11.6667,6.21724894e-15 Z M5.9997,5 L9.9997,5 L9.9997,2 L5.9997,2 L5.9997,5 L5.9997,5 Z" id="Fill-14"></path>
+        </g>
+    </g>
+</svg>
+</div>
+<span>
+Groups
+</span>
+</a></li><li class=""><a title="Milestones" href="http://unchar.bootcampcontent.com/dashboard/milestones"><div class="icon-container">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="16px" height="17px" viewBox="0 0 16 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill="#7E7C7C">
+            <path d="M15.1111,1 L0.8891,1 C0.3981,1 0.0001,1.446 0.0001,1.996 L0.0001,15.945 C0.0001,16.495 0.3981,16.941 0.8891,16.941 L15.1111,16.941 C15.6021,16.941 16.0001,16.495 16.0001,15.945 L16.0001,1.996 C16.0001,1.446 15.6021,1 15.1111,1 L15.1111,1 L15.1111,1 Z M14.0001,6.0002 L14.0001,14.949 L2.0001,14.949 L2.0001,6.0002 L14.0001,6.0002 Z M14.0001,4.0002 L14.0001,2.993 L2.0001,2.993 L2.0001,4.0002 L14.0001,4.0002 Z" id="Combined-Shape"></path>
+            <polygon id="Fill-11" points="3 2.0002 5 2.0002 5 0.0002 3 0.0002"></polygon>
+            <polygon id="Fill-16" points="11 2.0002 13 2.0002 13 0.0002 11 0.0002"></polygon>
+            <path d="M5.37709616,11.5511984 L6.92309616,12.7821984 C7.35112915,13.123019 7.97359761,13.0565604 8.32002627,12.6330535 L10.7740263,9.63305349 C11.1237073,9.20557058 11.0606364,8.57555475 10.6331535,8.22587373 C10.2056706,7.87619272 9.57565475,7.93926361 9.22597373,8.36674651 L6.77197373,11.3667465 L8.16890384,11.2176016 L6.62290384,9.98660159 C6.19085236,9.6425813 5.56172188,9.71394467 5.21770159,10.1459962 C4.8736813,10.5780476 4.94504467,11.2071781 5.37709616,11.5511984 L5.37709616,11.5511984 Z" id="Stroke-21"></path>
+        </g>
+    </g>
+</svg>
+</div>
+<span>
+Milestones
+</span>
+</a></li><li class=""><a title="Issues" class="dashboard-shortcuts-issues" href="http://unchar.bootcampcontent.com/dashboard/issues?assignee_id=49"><div class="icon-container">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill="#7E7C7C">
+            <path d="M8,0 C3.581,0 0,3.581 0,8 C0,12.419 3.581,16 8,16 C12.419,16 16,12.419 16,8 C16,3.581 12.419,0 8,0 M8,2 C11.308,2 14,4.692 14,8 C14,11.308 11.308,14 8,14 C4.692,14 2,11.308 2,8 C2,4.692 4.692,2 8,2" id="Fill-1"></path>
+            <path d="M7.1597,4 L8.8887,4 L8.8887,8 L7.1107,8 L7.1597,4 Z M7.1597,9.6667 L8.8887,9.6667 L8.8887,11.4447 L7.1107,11.4447 L7.1597,9.6667 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
+</div>
+<span>
+Issues
+<span class="count">0</span>
+</span>
+</a></li><li class=""><a title="Merge Requests" class="dashboard-shortcuts-merge_requests" href="http://unchar.bootcampcontent.com/dashboard/merge_requests?assignee_id=49"><div class="icon-container">
+<!--?xml version="1.0" encoding="UTF-8" standalone="no"?-->
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.7.2 (28276) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group" fill="#7E7C7C">
+            <path d="M15.1111,0 L0.8891,0 C0.3981,0 0.0001,0.446 0.0001,0.996 L0.0001,14.945 C0.0001,15.495 0.3981,15.941 0.8891,15.941 L15.1111,15.941 C15.6021,15.941 16.0001,15.495 16.0001,14.945 L16.0001,0.996 C16.0001,0.446 15.6021,0 15.1111,0 L15.1111,0 L15.1111,0 Z M2.0001,13.949 L14.0001,13.949 L14.0001,1.993 L2.0001,1.993 L2.0001,13.949 Z M2,5.0002 L14,5.0002 L14,3.0002 L2,3.0002 L2,5.0002 Z" id="Combined-Shape"></path>
+            <path d="M8.547,12.0002 L12,12.0002 L12,10.0002 L8.547,10.0002 L8.547,12.0002 Z M5.2029,12 L3.9999,10.867 L5.2029,9.501 L3.9999,8.181 L5.2029,7 L7.4529,9.499 L5.2029,12 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
+</div>
+<span>
+Merge Requests
+<span class="count">0</span>
+</span>
+</a></li><li class=""><a title="Snippets" href="http://unchar.bootcampcontent.com/dashboard/snippets"><div class="icon-container">
+<i class="fa fa-clipboard fa-fw"></i>
+</div>
+<span>
+Snippets
+</span>
+</a></li><li class=""><a title="Help" href="http://unchar.bootcampcontent.com/help"><div class="icon-container">
+<i class="fa fa-question-circle fa-fw"></i>
+</div>
+<span>
+Help
+</span>
+</a></li><li class=""><a title="Profile Settings" data-placement="bottom" href="http://unchar.bootcampcontent.com/profile"><div class="icon-container">
+<i class="fa fa-user fa-fw"></i>
+</div>
+<span>
+Profile Settings
+</span>
+</a></li></ul>
+
+<a class="sidebar-user" title="Profile" data-user="vbmack" href="http://unchar.bootcampcontent.com/u/vbmack"><img alt="Profile" class="avatar avatar s36" src="./index_files/a129bb6ca3d7767b5d741236f1bd91a2">
+<div class="username">
+vbmack
+</div>
+</a><a class="nav-header-btn text-center pin-nav-btn has-tooltip  js-nav-pin" title="Pin Navigation" data-placement="right" data-container="body" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#"><span class="sr-only">Toggle navigation pinning</span>
+<i class="fa fa-thumb-tack"></i>
+</a><div id="ascrail2001" class="nicescroll-rails nicescroll-rails-vr" style="width: 7px; z-index: 1000; cursor: default; position: absolute; top: 50px; left: 213px; height: 424px; touch-action: none; display: none;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 5px; height: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px; touch-action: none;"></div></div><div id="ascrail2001-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 7px; z-index: 1000; top: 467px; left: 0px; position: absolute; cursor: default; display: none;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 5px; width: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255); background-clip: padding-box; border-radius: 5px;"></div></div></div>
+<div class="layout-nav">
+<div class="container-fluid">
+<div class="controls">
+<div class="dropdown project-settings-dropdown">
+<a class="dropdown-new btn btn-default" data-toggle="dropdown" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#" id="project-settings-button">
+<i class="fa fa-cog"></i>
+<i class="fa fa-caret-down"></i>
+</a>
+<ul class="dropdown-menu dropdown-menu-align-right">
+<li class=""><a title="Members" class="team-tab tab" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/project_members"><span>
+Members
+</span>
+</a></li>
+<li class="divider"></li>
+<li>
+<a data-confirm="Are you sure you want to leave the &quot;The-Coding-Bootcamp / 11-16-Class-Content&quot; project?" title="Leave project" rel="nofollow" data-method="delete" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/project_members/leave">Leave Project
+</a></li>
+</ul>
+</div>
+</div>
+<div class="nav-control scrolling-tabs-container">
+<div class="fade-left">
+<i class="fa fa-angle-left"></i>
+</div>
+<div class="fade-right">
+<i class="fa fa-angle-right"></i>
+</div>
+<ul class="nav-links scrolling-tabs">
+<li class="home"><a title="Project" class="shortcuts-project" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content"><span>
+Project
+</span>
+</a></li><li class=""><a title="Activity" class="shortcuts-project-activity" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/activity"><span>
+Activity
+</span>
+</a></li><li class="active"><a title="Repository" class="shortcuts-tree" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tree/master"><span>
+Repository
+</span>
+</a></li><li class=""><a title="Pipelines" class="shortcuts-pipelines" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/pipelines"><span>
+Pipelines
+</span>
+</a></li><li class=""><a title="Graphs" class="shortcuts-graphs" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/graphs/master"><span>
+Graphs
+</span>
+</a></li><li class=""><a title="Issues" class="shortcuts-issues" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/issues"><span>
+Issues
+<span class="badge count issue_counter">0</span>
+</span>
+</a></li><li class=""><a title="Merge Requests" class="shortcuts-merge_requests" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/merge_requests"><span>
+Merge Requests
+<span class="badge count merge_counter">0</span>
+</span>
+</a></li><li class=""><a title="Wiki" class="shortcuts-wiki" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/wikis/home"><span>
+Wiki
+</span>
+</a></li><li class="hidden">
+<a title="Network" class="shortcuts-network" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/network/master">Network
+</a></li>
+<li class="hidden">
+<a class="shortcuts-new-issue" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/issues/new">Create a new issue
+</a></li>
+<li class="hidden">
+<a title="Builds" class="shortcuts-builds" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/builds">Builds
+</a></li>
+<li class="hidden">
+<a title="Commits" class="shortcuts-commits" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/commits/master">Commits
+</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+<div class="content-wrapper page-with-layout-nav">
+
+
+<div class="flash-container">
+</div>
+
+
+<div>
+<div class="content">
+<div class="clearfix">
+<div class="scrolling-tabs-container sub-nav-scroll">
+<div class="fade-left">
+<i class="fa fa-angle-left"></i>
+</div>
+<div class="fade-right">
+<i class="fa fa-angle-right"></i>
+</div>
+<div class="nav-links sub-nav scrolling-tabs">
+<ul class="container-fluid container-limited">
+<li class="active"><a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tree/master">Files
+</a></li><li class=""><a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/commits/master">Commits
+</a></li><li class=""><a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/network/master">Network
+</a></li><li class=""><a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/compare?from=master&amp;to=master">Compare
+</a></li><li class=""><a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/branches">Branches
+</a></li><li class=""><a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tags">Tags
+</a></li></ul>
+</div>
+</div>
+
+<div class="container-fluid container-limited">
+
+<div class="tree-holder" id="tree-holder">
+<div class="nav-block">
+<div class="tree-ref-holder">
+<form class="project-refs-form" action="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/refs/switch" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+<input type="hidden" name="destination" id="destination" value="blob">
+<input type="hidden" name="path" id="path" value="1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html">
+<div class="dropdown">
+<button class="dropdown-menu-toggle js-project-refs-dropdown" type="button" data-toggle="dropdown" data-selected="master" data-ref="master" data-refs-url="/The-Coding-Bootcamp/11-16-Class-Content/refs"><span class="dropdown-toggle-text">master</span><i class="fa fa-chevron-down"></i></button>
+<div class="dropdown-menu dropdown-menu-selectable">
+<div class="dropdown-title"><span>Switch branch/tag</span><button class="dropdown-title-button dropdown-menu-close" aria-label="Close" type="button"><i class="fa fa-times dropdown-menu-close-icon"></i></button></div>
+<div class="dropdown-input"><input type="search" id="" class="dropdown-input-field" placeholder="Search branches and tags" value=""><i class="fa fa-search dropdown-input-search"></i><i role="button" class="fa fa-times dropdown-input-clear js-dropdown-input-clear"></i></div>
+<div class="dropdown-content"></div>
+<div class="dropdown-loading"><i class="fa fa-spinner fa-spin"></i></div>
+</div>
+</div>
+</form>
+
+
+</div>
+<ul class="breadcrumb repo-breadcrumb">
+<li>
+<a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tree/master">11-16-Class-Content
+</a></li>
+<li>
+<a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#">..</a>
+</li>
+<li>
+<a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tree/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet">01-TimeSheet</a>
+</li>
+<li>
+<a href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html"><strong>
+index.html
+</strong>
+</a></li>
+</ul>
+</div>
+<ul class="blob-commit-info hidden-xs">
+<li class="commit js-toggle-container" id="commit-92636691">
+<img class="avatar s36 hidden-xs" width="36" alt="" src="./index_files/27f17ab9d7d85e9d28909816e4ddc324">
+<div class="commit-info-block">
+<div class="commit-row-title">
+<span class="item-title">
+<a class="commit-row-message" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/commit/926366910b58f9b394fcb7cbc821e18e5452f108">Adding week 7 classwork</a>
+<span class="commit-row-message visible-xs-inline">
+·
+92636691
+</span>
+</span>
+<div class="commit-actions hidden-xs">
+<button class="btn btn-transparent" data-clipboard-text="926366910b58f9b394fcb7cbc821e18e5452f108" type="button"><i class="fa fa-clipboard"></i></button>
+<a class="commit-short-id btn btn-transparent" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/commit/926366910b58f9b394fcb7cbc821e18e5452f108">92636691</a>
+<a class="btn btn-default" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/tree/926366910b58f9b394fcb7cbc821e18e5452f108">Browse Files</a>
+</div>
+</div>
+<div class="commit-row-info">
+<a class="commit-author-link has-tooltip" title="rgaspary@gmail.com" href="http://unchar.bootcampcontent.com/u/rgaspary">Renzo Gaspary</a>
+authored
+<time class="time_ago js-timeago" datetime="2017-01-11T22:32:27Z" title="" data-toggle="tooltip" data-placement="top" data-container="body" data-original-title="Jan 11, 2017 5:32pm EST">10 days ago</time><script>
+//<![CDATA[
+$('.js-timeago-pending').removeClass('js-timeago-pending').timeago()
+//]]>
+</script>
+</div>
+</div>
+</li>
+
+</ul>
+<div class="blob-content-holder" id="blob-content-holder">
+<article class="file-holder">
+<div class="file-title">
+<i class="fa fa-file-text-o fa-fw"></i>
+<strong>
+index.html
+</strong>
+<small>
+3.48 KB
+</small>
+<div class="file-actions hidden-xs">
+<div class="btn-group tree-btn-group">
+<a class="btn btn-sm" target="_blank" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/raw/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html">Raw</a>
+<a class="btn btn-sm" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blame/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html">Blame</a>
+<a class="btn btn-sm" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/commits/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html">History</a>
+<a class="btn btn-sm" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/92e794786313112f669d99344ecd29547573696f/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html">Permalink</a>
+</div>
+<div class="btn-group" role="group">
+<a class="btn btn-file-option" rel="nofollow" data-method="post" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/forks?continue%5Bnotice%5D=You%27re+not+allowed+to+make+changes+to+this+project+directly.+A+fork+of+this+project+has+been+created+that+you+can+make+changes+in%2C+so+you+can+submit+a+merge+request.&amp;continue%5Bnotice_now%5D=You%27re+not+allowed+to+make+changes+to+this+project+directly.+A+fork+of+this+project+is+being+created+that+you+can+make+changes+in%2C+so+you+can+submit+a+merge+request.&amp;continue%5Bto%5D=%2FThe-Coding-Bootcamp%2F11-16-Class-Content%2Fedit%2Fmaster%2F1-InClassExercises%2F07-firebase%2F1-Class-Content%2F7.3%2FActivities%2F01-TimeSheet%2Findex.html&amp;namespace_key=50">Edit</a>
+<a class="btn btn-default" rel="nofollow" data-method="post" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/forks?continue%5Bnotice%5D=You%27re+not+allowed+to+make+changes+to+this+project+directly.+A+fork+of+this+project+has+been+created+that+you+can+make+changes+in%2C+so+you+can+submit+a+merge+request.+Try+to+replace+this+file+again.&amp;continue%5Bnotice_now%5D=You%27re+not+allowed+to+make+changes+to+this+project+directly.+A+fork+of+this+project+is+being+created+that+you+can+make+changes+in%2C+so+you+can+submit+a+merge+request.&amp;continue%5Bto%5D=%2FThe-Coding-Bootcamp%2F11-16-Class-Content%2Fblob%2Fmaster%2F1-InClassExercises%2F07-firebase%2F1-Class-Content%2F7.3%2FActivities%2F01-TimeSheet%2Findex.html&amp;namespace_key=50">Replace</a>
+<a class="btn btn-remove" rel="nofollow" data-method="post" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/forks?continue%5Bnotice%5D=You%27re+not+allowed+to+make+changes+to+this+project+directly.+A+fork+of+this+project+has+been+created+that+you+can+make+changes+in%2C+so+you+can+submit+a+merge+request.+Try+to+delete+this+file+again.&amp;continue%5Bnotice_now%5D=You%27re+not+allowed+to+make+changes+to+this+project+directly.+A+fork+of+this+project+is+being+created+that+you+can+make+changes+in%2C+so+you+can+submit+a+merge+request.&amp;continue%5Bto%5D=%2FThe-Coding-Bootcamp%2F11-16-Class-Content%2Fblob%2Fmaster%2F1-InClassExercises%2F07-firebase%2F1-Class-Content%2F7.3%2FActivities%2F01-TimeSheet%2Findex.html&amp;namespace_key=50">Delete</a>
+</div>
+
+</div>
+</div>
+<div class="file-content code js-syntax-highlight white">
+<div class="line-numbers">
+<a class="diff-line-num" data-line-number="1" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L1" id="L1">
+<i class="fa fa-link"></i>
+1
+</a>
+<a class="diff-line-num" data-line-number="2" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L2" id="L2">
+<i class="fa fa-link"></i>
+2
+</a>
+<a class="diff-line-num" data-line-number="3" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L3" id="L3">
+<i class="fa fa-link"></i>
+3
+</a>
+<a class="diff-line-num" data-line-number="4" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L4" id="L4">
+<i class="fa fa-link"></i>
+4
+</a>
+<a class="diff-line-num" data-line-number="5" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L5" id="L5">
+<i class="fa fa-link"></i>
+5
+</a>
+<a class="diff-line-num" data-line-number="6" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L6" id="L6">
+<i class="fa fa-link"></i>
+6
+</a>
+<a class="diff-line-num" data-line-number="7" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L7" id="L7">
+<i class="fa fa-link"></i>
+7
+</a>
+<a class="diff-line-num" data-line-number="8" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L8" id="L8">
+<i class="fa fa-link"></i>
+8
+</a>
+<a class="diff-line-num" data-line-number="9" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L9" id="L9">
+<i class="fa fa-link"></i>
+9
+</a>
+<a class="diff-line-num" data-line-number="10" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L10" id="L10">
+<i class="fa fa-link"></i>
+10
+</a>
+<a class="diff-line-num" data-line-number="11" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L11" id="L11">
+<i class="fa fa-link"></i>
+11
+</a>
+<a class="diff-line-num" data-line-number="12" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L12" id="L12">
+<i class="fa fa-link"></i>
+12
+</a>
+<a class="diff-line-num" data-line-number="13" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L13" id="L13">
+<i class="fa fa-link"></i>
+13
+</a>
+<a class="diff-line-num" data-line-number="14" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L14" id="L14">
+<i class="fa fa-link"></i>
+14
+</a>
+<a class="diff-line-num" data-line-number="15" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L15" id="L15">
+<i class="fa fa-link"></i>
+15
+</a>
+<a class="diff-line-num" data-line-number="16" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L16" id="L16">
+<i class="fa fa-link"></i>
+16
+</a>
+<a class="diff-line-num" data-line-number="17" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L17" id="L17">
+<i class="fa fa-link"></i>
+17
+</a>
+<a class="diff-line-num" data-line-number="18" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L18" id="L18">
+<i class="fa fa-link"></i>
+18
+</a>
+<a class="diff-line-num" data-line-number="19" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L19" id="L19">
+<i class="fa fa-link"></i>
+19
+</a>
+<a class="diff-line-num" data-line-number="20" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L20" id="L20">
+<i class="fa fa-link"></i>
+20
+</a>
+<a class="diff-line-num" data-line-number="21" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L21" id="L21">
+<i class="fa fa-link"></i>
+21
+</a>
+<a class="diff-line-num" data-line-number="22" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L22" id="L22">
+<i class="fa fa-link"></i>
+22
+</a>
+<a class="diff-line-num" data-line-number="23" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L23" id="L23">
+<i class="fa fa-link"></i>
+23
+</a>
+<a class="diff-line-num" data-line-number="24" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L24" id="L24">
+<i class="fa fa-link"></i>
+24
+</a>
+<a class="diff-line-num" data-line-number="25" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L25" id="L25">
+<i class="fa fa-link"></i>
+25
+</a>
+<a class="diff-line-num" data-line-number="26" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L26" id="L26">
+<i class="fa fa-link"></i>
+26
+</a>
+<a class="diff-line-num" data-line-number="27" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L27" id="L27">
+<i class="fa fa-link"></i>
+27
+</a>
+<a class="diff-line-num" data-line-number="28" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L28" id="L28">
+<i class="fa fa-link"></i>
+28
+</a>
+<a class="diff-line-num" data-line-number="29" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L29" id="L29">
+<i class="fa fa-link"></i>
+29
+</a>
+<a class="diff-line-num" data-line-number="30" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L30" id="L30">
+<i class="fa fa-link"></i>
+30
+</a>
+<a class="diff-line-num" data-line-number="31" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L31" id="L31">
+<i class="fa fa-link"></i>
+31
+</a>
+<a class="diff-line-num" data-line-number="32" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L32" id="L32">
+<i class="fa fa-link"></i>
+32
+</a>
+<a class="diff-line-num" data-line-number="33" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L33" id="L33">
+<i class="fa fa-link"></i>
+33
+</a>
+<a class="diff-line-num" data-line-number="34" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L34" id="L34">
+<i class="fa fa-link"></i>
+34
+</a>
+<a class="diff-line-num" data-line-number="35" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L35" id="L35">
+<i class="fa fa-link"></i>
+35
+</a>
+<a class="diff-line-num" data-line-number="36" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L36" id="L36">
+<i class="fa fa-link"></i>
+36
+</a>
+<a class="diff-line-num" data-line-number="37" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L37" id="L37">
+<i class="fa fa-link"></i>
+37
+</a>
+<a class="diff-line-num" data-line-number="38" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L38" id="L38">
+<i class="fa fa-link"></i>
+38
+</a>
+<a class="diff-line-num" data-line-number="39" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L39" id="L39">
+<i class="fa fa-link"></i>
+39
+</a>
+<a class="diff-line-num" data-line-number="40" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L40" id="L40">
+<i class="fa fa-link"></i>
+40
+</a>
+<a class="diff-line-num" data-line-number="41" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L41" id="L41">
+<i class="fa fa-link"></i>
+41
+</a>
+<a class="diff-line-num" data-line-number="42" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L42" id="L42">
+<i class="fa fa-link"></i>
+42
+</a>
+<a class="diff-line-num" data-line-number="43" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L43" id="L43">
+<i class="fa fa-link"></i>
+43
+</a>
+<a class="diff-line-num" data-line-number="44" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L44" id="L44">
+<i class="fa fa-link"></i>
+44
+</a>
+<a class="diff-line-num" data-line-number="45" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L45" id="L45">
+<i class="fa fa-link"></i>
+45
+</a>
+<a class="diff-line-num" data-line-number="46" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L46" id="L46">
+<i class="fa fa-link"></i>
+46
+</a>
+<a class="diff-line-num" data-line-number="47" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L47" id="L47">
+<i class="fa fa-link"></i>
+47
+</a>
+<a class="diff-line-num" data-line-number="48" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L48" id="L48">
+<i class="fa fa-link"></i>
+48
+</a>
+<a class="diff-line-num" data-line-number="49" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L49" id="L49">
+<i class="fa fa-link"></i>
+49
+</a>
+<a class="diff-line-num" data-line-number="50" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L50" id="L50">
+<i class="fa fa-link"></i>
+50
+</a>
+<a class="diff-line-num" data-line-number="51" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L51" id="L51">
+<i class="fa fa-link"></i>
+51
+</a>
+<a class="diff-line-num" data-line-number="52" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L52" id="L52">
+<i class="fa fa-link"></i>
+52
+</a>
+<a class="diff-line-num" data-line-number="53" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L53" id="L53">
+<i class="fa fa-link"></i>
+53
+</a>
+<a class="diff-line-num" data-line-number="54" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L54" id="L54">
+<i class="fa fa-link"></i>
+54
+</a>
+<a class="diff-line-num" data-line-number="55" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L55" id="L55">
+<i class="fa fa-link"></i>
+55
+</a>
+<a class="diff-line-num" data-line-number="56" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L56" id="L56">
+<i class="fa fa-link"></i>
+56
+</a>
+<a class="diff-line-num" data-line-number="57" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L57" id="L57">
+<i class="fa fa-link"></i>
+57
+</a>
+<a class="diff-line-num" data-line-number="58" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L58" id="L58">
+<i class="fa fa-link"></i>
+58
+</a>
+<a class="diff-line-num" data-line-number="59" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L59" id="L59">
+<i class="fa fa-link"></i>
+59
+</a>
+<a class="diff-line-num" data-line-number="60" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L60" id="L60">
+<i class="fa fa-link"></i>
+60
+</a>
+<a class="diff-line-num" data-line-number="61" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L61" id="L61">
+<i class="fa fa-link"></i>
+61
+</a>
+<a class="diff-line-num" data-line-number="62" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L62" id="L62">
+<i class="fa fa-link"></i>
+62
+</a>
+<a class="diff-line-num" data-line-number="63" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L63" id="L63">
+<i class="fa fa-link"></i>
+63
+</a>
+<a class="diff-line-num" data-line-number="64" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L64" id="L64">
+<i class="fa fa-link"></i>
+64
+</a>
+<a class="diff-line-num" data-line-number="65" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L65" id="L65">
+<i class="fa fa-link"></i>
+65
+</a>
+<a class="diff-line-num" data-line-number="66" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L66" id="L66">
+<i class="fa fa-link"></i>
+66
+</a>
+<a class="diff-line-num" data-line-number="67" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L67" id="L67">
+<i class="fa fa-link"></i>
+67
+</a>
+<a class="diff-line-num" data-line-number="68" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L68" id="L68">
+<i class="fa fa-link"></i>
+68
+</a>
+<a class="diff-line-num" data-line-number="69" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L69" id="L69">
+<i class="fa fa-link"></i>
+69
+</a>
+<a class="diff-line-num" data-line-number="70" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L70" id="L70">
+<i class="fa fa-link"></i>
+70
+</a>
+<a class="diff-line-num" data-line-number="71" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L71" id="L71">
+<i class="fa fa-link"></i>
+71
+</a>
+<a class="diff-line-num" data-line-number="72" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L72" id="L72">
+<i class="fa fa-link"></i>
+72
+</a>
+<a class="diff-line-num" data-line-number="73" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L73" id="L73">
+<i class="fa fa-link"></i>
+73
+</a>
+<a class="diff-line-num" data-line-number="74" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L74" id="L74">
+<i class="fa fa-link"></i>
+74
+</a>
+<a class="diff-line-num" data-line-number="75" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L75" id="L75">
+<i class="fa fa-link"></i>
+75
+</a>
+<a class="diff-line-num" data-line-number="76" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L76" id="L76">
+<i class="fa fa-link"></i>
+76
+</a>
+<a class="diff-line-num" data-line-number="77" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L77" id="L77">
+<i class="fa fa-link"></i>
+77
+</a>
+<a class="diff-line-num" data-line-number="78" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L78" id="L78">
+<i class="fa fa-link"></i>
+78
+</a>
+<a class="diff-line-num" data-line-number="79" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L79" id="L79">
+<i class="fa fa-link"></i>
+79
+</a>
+<a class="diff-line-num" data-line-number="80" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L80" id="L80">
+<i class="fa fa-link"></i>
+80
+</a>
+<a class="diff-line-num" data-line-number="81" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L81" id="L81">
+<i class="fa fa-link"></i>
+81
+</a>
+<a class="diff-line-num" data-line-number="82" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L82" id="L82">
+<i class="fa fa-link"></i>
+82
+</a>
+<a class="diff-line-num" data-line-number="83" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L83" id="L83">
+<i class="fa fa-link"></i>
+83
+</a>
+<a class="diff-line-num" data-line-number="84" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L84" id="L84">
+<i class="fa fa-link"></i>
+84
+</a>
+<a class="diff-line-num" data-line-number="85" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L85" id="L85">
+<i class="fa fa-link"></i>
+85
+</a>
+<a class="diff-line-num" data-line-number="86" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L86" id="L86">
+<i class="fa fa-link"></i>
+86
+</a>
+<a class="diff-line-num" data-line-number="87" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L87" id="L87">
+<i class="fa fa-link"></i>
+87
+</a>
+<a class="diff-line-num" data-line-number="88" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L88" id="L88">
+<i class="fa fa-link"></i>
+88
+</a>
+<a class="diff-line-num" data-line-number="89" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L89" id="L89">
+<i class="fa fa-link"></i>
+89
+</a>
+<a class="diff-line-num" data-line-number="90" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L90" id="L90">
+<i class="fa fa-link"></i>
+90
+</a>
+<a class="diff-line-num" data-line-number="91" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L91" id="L91">
+<i class="fa fa-link"></i>
+91
+</a>
+<a class="diff-line-num" data-line-number="92" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L92" id="L92">
+<i class="fa fa-link"></i>
+92
+</a>
+<a class="diff-line-num" data-line-number="93" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L93" id="L93">
+<i class="fa fa-link"></i>
+93
+</a>
+<a class="diff-line-num" data-line-number="94" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L94" id="L94">
+<i class="fa fa-link"></i>
+94
+</a>
+<a class="diff-line-num" data-line-number="95" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L95" id="L95">
+<i class="fa fa-link"></i>
+95
+</a>
+<a class="diff-line-num" data-line-number="96" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L96" id="L96">
+<i class="fa fa-link"></i>
+96
+</a>
+<a class="diff-line-num" data-line-number="97" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L97" id="L97">
+<i class="fa fa-link"></i>
+97
+</a>
+<a class="diff-line-num" data-line-number="98" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L98" id="L98">
+<i class="fa fa-link"></i>
+98
+</a>
+<a class="diff-line-num" data-line-number="99" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L99" id="L99">
+<i class="fa fa-link"></i>
+99
+</a>
+<a class="diff-line-num" data-line-number="100" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L100" id="L100">
+<i class="fa fa-link"></i>
+100
+</a>
+<a class="diff-line-num" data-line-number="101" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L101" id="L101">
+<i class="fa fa-link"></i>
+101
+</a>
+<a class="diff-line-num" data-line-number="102" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L102" id="L102">
+<i class="fa fa-link"></i>
+102
+</a>
+<a class="diff-line-num" data-line-number="103" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L103" id="L103">
+<i class="fa fa-link"></i>
+103
+</a>
+<a class="diff-line-num" data-line-number="104" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L104" id="L104">
+<i class="fa fa-link"></i>
+104
+</a>
+<a class="diff-line-num" data-line-number="105" href="http://unchar.bootcampcontent.com/The-Coding-Bootcamp/11-16-Class-Content/blob/master/1-InClassExercises/07-firebase/1-Class-Content/7.3/Activities/01-TimeSheet/index.html#L105" id="L105">
+<i class="fa fa-link"></i>
+105
+</a>
+</div>
+<div class="blob-content" data-blob-id="62481ccf0aeb6d58a5cdb9292c944e95e6f5561a">
+<pre class="code highlight"><code><span id="LC1" class="line"><span class="cp">&lt;!DOCTYPE html&gt;</span></span>
+<span id="LC2" class="line"></span>
+<span id="LC3" class="line"><span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en-us"</span><span class="nt">&gt;</span></span>
+<span id="LC4" class="line"></span>
+<span id="LC5" class="line">  <span class="nt">&lt;head&gt;</span></span>
+<span id="LC6" class="line"></span>
+<span id="LC7" class="line">    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span></span>
+<span id="LC8" class="line">    <span class="nt">&lt;title&gt;</span>Employee Tracker<span class="nt">&lt;/title&gt;</span></span>
+<span id="LC9" class="line"></span>
+<span id="LC10" class="line">    <span class="c">&lt;!-- Bootstrap --&gt;</span></span>
+<span id="LC11" class="line">    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span></span>
+<span id="LC12" class="line">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://code.jquery.com/jquery-3.1.1.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span id="LC13" class="line">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span id="LC14" class="line"></span>
+<span id="LC15" class="line">    <span class="c">&lt;!-- Firebase Reference --&gt;</span></span>
+<span id="LC16" class="line">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://www.gstatic.com/firebasejs/live/3.0/firebase.js"</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span id="LC17" class="line"></span>
+<span id="LC18" class="line">    <span class="c">&lt;!-- Moment.js Reference --&gt;</span></span>
+<span id="LC19" class="line">    <span class="c">&lt;!-- &lt;script src="http://momentjs.com/downloads/moment.js"&gt;&lt;/script&gt;   --&gt;</span></span>
+<span id="LC20" class="line">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span id="LC21" class="line"></span>
+<span id="LC22" class="line">  <span class="nt">&lt;/head&gt;</span></span>
+<span id="LC23" class="line"></span>
+<span id="LC24" class="line">  <span class="nt">&lt;body&gt;</span></span>
+<span id="LC25" class="line"></span>
+<span id="LC26" class="line">    <span class="c">&lt;!-- Employee Tracker --&gt;</span></span>
+<span id="LC27" class="line">    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span></span>
+<span id="LC28" class="line"></span>
+<span id="LC29" class="line">      <span class="c">&lt;!-- Jumbotron --&gt;</span></span>
+<span id="LC30" class="line">      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"jumbotron"</span> <span class="na">style=</span><span class="s">"background-color: black; color: white"</span><span class="nt">&gt;</span></span>
+<span id="LC31" class="line">        <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>Employee Data Management<span class="nt">&lt;/h1&gt;</span></span>
+<span id="LC32" class="line">        <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"text-center"</span><span class="nt">&gt;</span>A Comprehensive Directory of Employee Billable Hours<span class="nt">&lt;/h3&gt;</span></span>
+<span id="LC33" class="line">      <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC34" class="line"></span>
+<span id="LC35" class="line">      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span></span>
+<span id="LC36" class="line"></span>
+<span id="LC37" class="line">        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span></span>
+<span id="LC38" class="line"></span>
+<span id="LC39" class="line">        <span class="c">&lt;!-- Current Employees--&gt;</span></span>
+<span id="LC40" class="line">          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-primary"</span><span class="nt">&gt;</span></span>
+<span id="LC41" class="line">            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span><span class="nt">&gt;</span></span>
+<span id="LC42" class="line">              <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;&lt;strong&gt;</span>Current Employees<span class="nt">&lt;/strong&gt;&lt;/h3&gt;</span></span>
+<span id="LC43" class="line">            <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC44" class="line">            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span></span>
+<span id="LC45" class="line">              <span class="nt">&lt;table</span> <span class="na">class=</span><span class="s">"table table-hover"</span> <span class="na">id=</span><span class="s">'employee-table'</span><span class="nt">&gt;</span></span>
+<span id="LC46" class="line">                <span class="nt">&lt;thead&gt;</span></span>
+<span id="LC47" class="line">                  <span class="nt">&lt;tr&gt;</span></span>
+<span id="LC48" class="line">                    <span class="nt">&lt;th&gt;</span>Employee Name<span class="nt">&lt;/th&gt;</span></span>
+<span id="LC49" class="line">                    <span class="nt">&lt;th&gt;</span>Role<span class="nt">&lt;/th&gt;</span></span>
+<span id="LC50" class="line">                    <span class="nt">&lt;th&gt;</span>Start Date<span class="nt">&lt;/th&gt;</span></span>
+<span id="LC51" class="line">                    <span class="nt">&lt;th&gt;</span>Months Worked<span class="nt">&lt;/th&gt;</span></span>
+<span id="LC52" class="line">                    <span class="nt">&lt;th&gt;</span>Monthly Rate ($)<span class="nt">&lt;/th&gt;</span></span>
+<span id="LC53" class="line">                    <span class="nt">&lt;th&gt;</span>Total Billed ($)<span class="nt">&lt;/th&gt;</span></span>
+<span id="LC54" class="line">                  <span class="nt">&lt;/tr&gt;</span></span>
+<span id="LC55" class="line">                <span class="nt">&lt;/thead&gt;</span></span>
+<span id="LC56" class="line">                <span class="nt">&lt;tbody&gt;</span></span>
+<span id="LC57" class="line">                <span class="nt">&lt;/tbody&gt;</span></span>
+<span id="LC58" class="line">              <span class="nt">&lt;/table&gt;</span></span>
+<span id="LC59" class="line">            <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC60" class="line">          <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC61" class="line"></span>
+<span id="LC62" class="line">          <span class="c">&lt;!-- Add Employee  --&gt;</span></span>
+<span id="LC63" class="line">          <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel panel-primary"</span><span class="nt">&gt;</span></span>
+<span id="LC64" class="line">            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span><span class="nt">&gt;</span></span>
+<span id="LC65" class="line">              <span class="nt">&lt;h3</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;&lt;strong&gt;</span>Add Employee<span class="nt">&lt;/strong&gt;&lt;/h3&gt;</span></span>
+<span id="LC66" class="line">            <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC67" class="line">            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span></span>
+<span id="LC68" class="line"></span>
+<span id="LC69" class="line">              <span class="c">&lt;!-- Entry Form --&gt;</span></span>
+<span id="LC70" class="line">              <span class="nt">&lt;form&gt;</span></span>
+<span id="LC71" class="line">                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span></span>
+<span id="LC72" class="line">                  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"employee-name-input"</span><span class="nt">&gt;</span>Employee Name<span class="nt">&lt;/label&gt;</span></span>
+<span id="LC73" class="line">                  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"employee-name-input"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span></span>
+<span id="LC74" class="line">                <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC75" class="line">                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span></span>
+<span id="LC76" class="line">                  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"role-input"</span><span class="nt">&gt;</span>Role<span class="nt">&lt;/label&gt;</span></span>
+<span id="LC77" class="line">                  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"role-input"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span></span>
+<span id="LC78" class="line">                <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC79" class="line">                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span></span>
+<span id="LC80" class="line">                  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"start-input"</span><span class="nt">&gt;</span>Start Date (DD/MM/YY - ex: 01/01/89)<span class="nt">&lt;/label&gt;</span></span>
+<span id="LC81" class="line">                  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"start-input"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span></span>
+<span id="LC82" class="line">                <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC83" class="line">                <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span></span>
+<span id="LC84" class="line">                  <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">"rate-input"</span><span class="nt">&gt;</span>Monthly Rate<span class="nt">&lt;/label&gt;</span></span>
+<span id="LC85" class="line">                  <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">"form-control"</span> <span class="na">id=</span><span class="s">"rate-input"</span> <span class="na">type=</span><span class="s">"text"</span><span class="nt">&gt;</span></span>
+<span id="LC86" class="line">                <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC87" class="line">                <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">id=</span><span class="s">"add-employee-btn"</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Submit<span class="nt">&lt;/button&gt;</span></span>
+<span id="LC88" class="line">              <span class="nt">&lt;/form&gt;</span></span>
+<span id="LC89" class="line"></span>
+<span id="LC90" class="line">            <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC91" class="line"></span>
+<span id="LC92" class="line">          <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC93" class="line"></span>
+<span id="LC94" class="line">        <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC95" class="line"></span>
+<span id="LC96" class="line">      <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC97" class="line"></span>
+<span id="LC98" class="line">    <span class="nt">&lt;/div&gt;</span></span>
+<span id="LC99" class="line"></span>
+<span id="LC100" class="line">    <span class="c">&lt;!-- Javascript --&gt;</span></span>
+<span id="LC101" class="line">    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"timesheetLogic.js"</span><span class="nt">&gt;&lt;/script&gt;</span></span>
+<span id="LC102" class="line"></span>
+<span id="LC103" class="line">  <span class="nt">&lt;/body&gt;</span></span>
+<span id="LC104" class="line"></span>
+<span id="LC105" class="line"><span class="nt">&lt;/html&gt;</span></span></code></pre>
+
+</div>
+</div>
+
+
+</article>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="device-xs visible-xs"></div><div class="device-sm visible-sm"></div><div class="device-md visible-md"></div><div class="device-lg visible-lg"></div></body></html>
