@@ -23,14 +23,8 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -50,7 +44,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About Us</a>
+                        <a class="page-scroll" href="#mappage">map Us</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
@@ -74,19 +68,36 @@
                 <h1 id="homeHeading">When Your Shiz Goes Flat, We Got You Covered!</h1>
                 <hr>
                 <p>Car troubles? Whether your engine goes, transmission drops or your shiz just goes flat, we have got you covered.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</a>
+                <a href="#mappage" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</a>
             </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="services" id="mappage">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">WE'VE GOT WHAT YOU NEED!</h2>
+                    <h2 class="section-heading">Mechanics Around You</h2>
+                    <hr class="primary">
+                    <!--<input id="pac-input" class="controls" type="text">
+                    <div id="map"></div>-->
+
+                    
+                    <div id="map" class="controls"></div>
+        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">You Can Trust Us With Your Shiz</h2>
                     <hr class="light">
                     <p class="text-faded">Let us take away the inconvience of car troubles. We come to you, <em>wherever</em> you are! We take the hassle of dropping off and picking up your car, or worse hiring a tow truck. We can resolve your car problems without any interruption to your day! You have control over repairs and costs! </p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+                    
                 </div>
             </div>
         </div>
@@ -97,7 +108,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
+                    <hr class="light">
                 </div>
             </div>
         </div>
@@ -139,7 +150,8 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Let Us Help You When Your Shiz Goes Flat!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">HELP ME NOW!</a>
+                <a href="#mappage" class="btn btn-default btn-xl sr-button">Find Me A Shiz Fixer</a>
+
             </div>
         </div>
     </aside>
@@ -177,6 +189,11 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+    
+    <!--google maps--> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ6mmr-zE_3pX8xlvcmGxkH6GVVG4WBk&libraries=places&callback=initMap"  async defer></script>
+
+    <script src="js/maps.js"></script>
 
 </body>
 
