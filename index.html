@@ -2,7 +2,11 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
 
+=======
+    <!--Specify the character encoding for the HTML document:  -->
+>>>>>>> origin/victorbranch
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -29,7 +33,11 @@
 </head>
 
 <body id="page-top">
+<<<<<<< HEAD
 
+=======
+    <!-- Navigation Bar -->
+>>>>>>> origin/victorbranch
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,13 +46,21 @@
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">Your Shiz Flat?</a>
+<<<<<<< HEAD
+=======
+                <span><h2 id="name-display"></h2></span>
+>>>>>>> origin/victorbranch
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+<<<<<<< HEAD
                         <a class="page-scroll" href="#mappage">Find Mechanic</a>
+=======
+                        <a class="page-scroll" href="#mappage">map Us</a>
+>>>>>>> origin/victorbranch
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
@@ -73,6 +89,7 @@
         </div>
     </header>
 
+<<<<<<< HEAD
     <section class="maps" id="mappage">
         <div class="container">
             <div class="row">
@@ -82,6 +99,47 @@
                     <!--<input id="pac-input" class="controls" type="text">
                     <div id="map"></div>-->
                     <div class="searchResults"></div>
+=======
+<div class="modal-body">
+            
+           <!-- content goes here -->
+    <section class="bg-primary" id="form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 ">
+            <form id="form">
+             <div class="form-group">
+               <label for="nameInput">Name</label>
+               <input type="text" class="form-control" id="nameInput" placeholder="Enter Name">
+             </div>
+             <div class="form-group">
+               <label for="phoneInput">Phone Number</label>
+               <input type="text" class="form-control" id="phoneInput" placeholder="Phone Number">
+             </div>
+             <div class="form-group">
+               <label for="emailInput">Email address</label>
+               <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+             </div>              
+             <button type="submit" id="add-user" class="btn btn-default">Submit</button>
+           </form>
+
+        </div>
+        </div>
+    </div>
+ </div>
+ </section>
+
+    <!-- Section/Div containing map with location and service providers -->
+    <section class="services" id="mappage">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">Mechanics Around You</h2>
+                    <hr class="primary">
+                    <!--<input id="pac-input" class="controls" type="text">
+                    <div id="map"></div>-->
+
+>>>>>>> origin/victorbranch
                     
                     <div id="map" class="controls"></div>
         
@@ -89,8 +147,13 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
 
     <section class="bg-primary">
+=======
+    <!-- Section/Div -->
+    <section class="bg-primary" id="services">
+>>>>>>> origin/victorbranch
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -98,7 +161,11 @@
                     <hr class="light">
 
                     <p class="text-faded">Let us take away the inconvenience of car troubles. We come to you, <em>wherever</em> you are! We take the hassle of dropping off and picking up your car, or worse hiring a tow truck. We can resolve your car problems without any interruption to your day! You have control over repairs and costs! </p>
+<<<<<<< HEAD
                     <a href="#mappage" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+=======
+                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+>>>>>>> origin/victorbranch
 
                 </div>
             </div>
@@ -174,6 +241,7 @@
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
                     <p><a href="mailto:your-email@your-domain.com">customercare@yourshizmatters.com</a></p>
                 </div>
+<<<<<<< HEAD
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                 	<h3>Your Shiz Admin Team</h3>
                 	<img src="img\squattyPottyJess.jpg" alt="Jessica Pankus" style="width:150px;height:150px;">
@@ -181,6 +249,8 @@
                 	<img src="img/tHeadShot.jpg" alt="Theresa Bates" style="width:150px;height:150px;">
                 	<img src="C:\ShizGoesFlat\img/ProfilePicVictor" alt="Christina Ruc" style="width:150px;height:150px;">
                 </div>
+=======
+>>>>>>> origin/victorbranch
             </div>
         </div>
     </section>
@@ -204,6 +274,21 @@
 
     <script src="js/maps.js"></script>
 
+<<<<<<< HEAD
+=======
+    <script type="text/javascript">
+         $("#add-user").on("click", function(event) {
+            event.preventDefault();
+             $("#form").hide();
+        var customerName = $("#nameInput").val().trim();
+        console.log(customerName);
+        $("#name-display").html(" "  + customerName);
+
+    
+ });
+</script>
+
+>>>>>>> origin/victorbranch
 </body>
 
 </html>
