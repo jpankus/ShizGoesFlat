@@ -226,6 +226,19 @@ header .header-content .header-content-inner p {
 .service-box p {
   margin-bottom: 0;
 }
+.maps-box {
+  max-width: 400px;
+  margin: 50px auto 0;
+}
+@media (min-width: 992px) {
+  .maps-box {
+    margin: 20px auto 0;
+  }
+}
+.maps-box p {
+  margin-bottom: 0;
+}
+
 .account-box {
   position: relative;
   display: block;
@@ -420,7 +433,7 @@ body {
 /*google map css*/
 
       #map {
-        height: 300px;
+        height: 400px;
         padding:20 50 20 50;
         border-radius: 20px;
       }
