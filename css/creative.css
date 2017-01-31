@@ -45,8 +45,27 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+img.shiz-team{
+  width:150px;
+  height:150px;
+  border-radius: 20px;
+}
+
+#search-results {
+  background-color:white;
+  border-color: #F05F40;
+}
 .bg-primary {
   background-color: #F05F40;
+}
+
+.panel-primary .panel-heading {
+  background-color:#F05F40;
+  border-color:#F05F40;
+  color:white;
+}
+.panel-body{
+  border-color:#F05F40;
 }
 .bg-dark {
   background-color: #222222;

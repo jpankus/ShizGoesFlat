@@ -50,9 +50,6 @@
                         <a class="page-scroll" href="#services">Services</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#account">My Account</a>
-                    </li>
-                    <li>
                         <a class="page-scroll" href="#contact">Contact Us</a>
                     </li>
                 </ul>
@@ -84,18 +81,28 @@
                     <div id="map"></div>-->
                     <div class="searchResults"></div>
                     <div id="map" class="controls"></div>
-                    <a href="find" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</a><br>
+                    <button id="find-btn" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</button><br>
 
-                    <input id="pac-input" class="controls" type="text" placeholder="Search Box"><br>
-
-                    <div class="form-group">
-                    <label for="usr">Search For:</label>
-                    <input type="text" class="form-control" id="usr">
-                    </div>
-        
+                    <div id="search-results" class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Shiz Fixers Near You</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='company-table'>
+                <thead>
+                  <tr>
+                    <th>Company Name</th>
+                    <th>Open Now</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <section class="bg-primary">
@@ -182,6 +189,14 @@
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
                     <p><a href="mailto:your-email@your-domain.com">customercare@yourshizmatters.com</a></p>
                 </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                	<hr class="primary">
+                    <h3>Your Shiz Admin Team</h3>
+                	<img class="shiz-team" src="img\squattyPottyJess.jpg" alt="Jessica Pankus">
+                	<img class="shiz-team" src="img\ProfilePicVictor.jpg" alt="Victor Mack">
+                	<img class="shiz-team" src="img/tHeadShot.jpg" alt="Theresa Bates">
+                	<img class="shiz-team" src="img/christina.jpeg" alt="Christina Ruc">
+                </div>
             </div>
         </div>
     </section>
@@ -205,6 +220,8 @@
 
     <script src="js/maps.js"></script>
     <script src="js/searchFind.js"></script>
+    <script src="js/shiz.js"></script>
+
 
 </body>
 
