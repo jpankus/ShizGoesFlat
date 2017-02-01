@@ -37,7 +37,7 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Your Shiz Flat?</a>
+                <a class="navbar-brand page-scroll" id="name-display" href="#page-top">Welcome To Shiz Fixer</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -70,6 +70,48 @@
             </div>
         </div>
     </header>
+    
+
+        <!-- content goes here -->
+        <section class="bg-primary">
+            <div class="container modal-body">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 ">
+                        <form id="form">
+                            <div class="form-group">
+                                <label for="nameInput">Name</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneInput">Phone Number</label>
+                                <input type="text" class="form-control" id="phoneInput" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailInput">Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="carYear">Car Year</label>
+                                <input type="text" class="form-control" id="carYear" placeholder="Car Year">
+                            </div>
+                            <div class="form-group">
+                                <label for="carMake">Car Make</label>
+                                <input type="text" class="form-control" id="carMake" placeholder="Car Make">
+                            </div>
+                            <div class="form-group">
+                                <label for="carModel">Car Model</label>
+                                <input type="text" class="form-control" id="carModel" placeholder="Car Model">
+                            </div>
+                            <div class="form-group">
+                                <label for="carPart">Car Part</label>
+                                <input type="text" class="form-control" id="carPart" placeholder="Car Part">
+                            </div>
+                            <button type="submit" id="add-user" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
 
     <section class="maps" id="mappage">
         <div class="container">
@@ -96,8 +138,6 @@
                     <th>Rating</th>
                   </tr>
                 </thead>
-                <tbody>
-                </tbody>
               </table>
             </div>
           </div>
@@ -190,12 +230,12 @@
                     <p><a href="mailto:your-email@your-domain.com">customercare@yourshizmatters.com</a></p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                	<hr class="primary">
+                    <hr class="primary">
                     <h3>Your Shiz Admin Team</h3>
-                	<img class="shiz-team" src="img\squattyPottyJess.jpg" alt="Jessica Pankus">
-                	<img class="shiz-team" src="img\ProfilePicVictor.jpg" alt="Victor Mack">
-                	<img class="shiz-team" src="img/tHeadShot.jpg" alt="Theresa Bates">
-                	<img class="shiz-team" src="img/christina.jpeg" alt="Christina Ruc">
+                    <img class="shiz-team" src="img\squattyPottyJess.jpg" alt="Jessica Pankus">
+                    <img class="shiz-team" src="img\ProfilePicVictor.jpg" alt="Victor Mack">
+                    <img class="shiz-team" src="img/tHeadShot.jpg" alt="Theresa Bates">
+                    <img class="shiz-team" src="img/christina.jpeg" alt="Christina Ruc">
                 </div>
             </div>
         </div>
@@ -222,6 +262,16 @@
     <script src="js/searchFind.js"></script>
     <script src="js/shiz.js"></script>
 
+    <script type="text/javascript">
+    $("#add-user").on("click", function(event) {
+        event.preventDefault();
+        $("#form").hide();
+        var customerName = $("#nameInput").val().trim();
+        console.log(customerName);
+        $("#name-display").html("Welcome: " + customerName);
+
+  });
+  </script>
 
 </body>
 
