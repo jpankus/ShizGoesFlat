@@ -1,73 +1,44 @@
-firebase.initializeApp(config);
+var map;
+            var service;
+            var infowindow;
 
-var database = firebase.database();
+            function onClick() {
+                var currentLocation = new google.maps.LatLng(35.2238751,-80.8377787);
 
-// 2. Button for adding search results
-$("#find-btn").on("click", function(event) {
-  event.preventDefault();
+                map = new google.maps.Map(document.getElementById('map'), {
+                    center: currentLocation,
+                    zoom: 15
+                    });
 
-  // Grabs user input
-  var companyName = $("#employee-name-input").val();
-  var openNow = $("#role-input").val();
-  var rating = $("#rate-input").val();
+                var request = {
+                    location: currentLocation,
+                    radius: '500',
+                    query: 'auto repair'
+                };
 
-  // Creates local "temporary" object for holding employee data
-  var newEmp = {
-    name: empName,
-    role: empRole,
-    start: empStart,
-    rate: empRate
-  };
+                service = new google.maps.places.PlacesService(map);
+                service.textSearch(request, callback);
+            }
 
-  // Uploads employee data to the database
-  database.ref().push(newEmp);
+            function callback(results, status) {
+                if (status == google.maps.places.PlacesServiceStatus.OK) {
+                    for (var i = 0; i < results.length; i++) {
+                        var place = results[i];
+                        createMarker(results[i]);
+                    }
+                }
+            }
 
-  // Logs everything to console
-  console.log(newEmp.name);
-  console.log(newEmp.role);
-  console.log(newEmp.start);
-  console.log(newEmp.rate);
+            function createMarker(place) {
+                var placeLoc = place.geometry.location;
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: place.geometry.location
+                });
 
- 
-  // Clears all of the text-boxes
-  $("#employee-name-input").val("");
-  $("#role-input").val("");
-  $("#start-input").val("");
-  $("#rate-input").val("");
-
-  // Prevents moving to new page
-  return false;
-});
-// 3. Create Firebase event for adding employee to the database and a row in the html when a user adds an entry
-database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-
-  console.log(childSnapshot.val());
-
-  // Store everything into a variable.
-  var empName = childSnapshot.val().name;
-  var empRole = childSnapshot.val().role;
-  var empStart = childSnapshot.val().start;
-  var empRate = childSnapshot.val().rate;
-
-  // Employee Info
-  console.log(empName);
-  console.log(empRole);
-  console.log(empStart);
-  console.log(empRate);
-
-  // Prettify the employee start
-  var empStartPretty = moment.unix(empStart).format("MM/DD/YY");
-
-  // Calculate the months worked using hardcore math
-  // To calculate the months worked
-  var empMonths = moment().diff(moment.unix(empStart, "X"), "months");
-  console.log(empMonths);
-
-  // Calculate the total billed rate
-  var empBilled = empMonths * empRate;
-  console.log(empBilled);
-
-  // Add each train's data into the table
-  $("#employee-table > tbody").append("<tr><td>" + empName + "</td><td>" + empRole + "</td><td>" +
-  empStartPretty + "</td><td>" + empMonths + "</td><td>" + empRate + "</td><td>" + empBilled + "</td></tr>");
-});
+                // TODO - you guys need to figure this one out
+                google.maps.event.addListener(marker, 'click', function() {
+                    infowindow.setContent(place.name);
+                    infowindow.open(map, this);
+                });
+            }

@@ -54,9 +54,21 @@ img.shiz-team{
 #search-results {
   background-color:white;
   border-color: #F05F40;
+
 }
+.modal-body{
+  padding-left:150px;
+  padding-top:20px;
+}
+
 .bg-primary {
   background-color: #F05F40;
+}
+
+.bg-modal {
+  background-color: #F05F40;
+  padding:30px 20px 30px 20px;
+  color:white;
 }
 
 .panel-primary .panel-heading {
