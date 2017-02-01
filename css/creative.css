@@ -45,8 +45,27 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+img.shiz-team{
+  width:150px;
+  height:150px;
+  border-radius: 20px;
+}
+
+#search-results {
+  background-color:white;
+  border-color: #F05F40;
+}
 .bg-primary {
   background-color: #F05F40;
+}
+
+.panel-primary .panel-heading {
+  background-color:#F05F40;
+  border-color:#F05F40;
+  color:white;
+}
+.panel-body{
+  border-color:#F05F40;
 }
 .bg-dark {
   background-color: #222222;
@@ -226,7 +245,6 @@ header .header-content .header-content-inner p {
 .service-box p {
   margin-bottom: 0;
 }
-<<<<<<< HEAD
 .maps-box {
   max-width: 400px;
   margin: 50px auto 0;
@@ -240,8 +258,6 @@ header .header-content .header-content-inner p {
   margin-bottom: 0;
 }
 
-=======
->>>>>>> origin/victorbranch
 .account-box {
   position: relative;
   display: block;
@@ -411,6 +427,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   padding: 15px 30px;
+  margin: 15px 15px;
 }
 ::-moz-selection {
   color: white;
@@ -436,11 +453,7 @@ body {
 /*google map css*/
 
       #map {
-<<<<<<< HEAD
         height: 400px;
-=======
-        height: 300px;
->>>>>>> origin/victorbranch
         padding:20 50 20 50;
         border-radius: 20px;
       }
