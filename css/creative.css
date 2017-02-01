@@ -19,6 +19,9 @@ hr {
 hr.light {
   border-color: white;
 }
+hr.secondary {
+  background-color: #D3D3D3;
+}
 a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
@@ -42,8 +45,27 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+img.shiz-team{
+  width:150px;
+  height:150px;
+  border-radius: 20px;
+}
+
+#search-results {
+  background-color:white;
+  border-color: #F05F40;
+}
 .bg-primary {
   background-color: #F05F40;
+}
+
+.panel-primary .panel-heading {
+  background-color:#F05F40;
+  border-color:#F05F40;
+  color:white;
+}
+.panel-body{
+  border-color:#F05F40;
 }
 .bg-dark {
   background-color: #222222;
@@ -223,6 +245,19 @@ header .header-content .header-content-inner p {
 .service-box p {
   margin-bottom: 0;
 }
+.maps-box {
+  max-width: 400px;
+  margin: 50px auto 0;
+}
+@media (min-width: 992px) {
+  .maps-box {
+    margin: 20px auto 0;
+  }
+}
+.maps-box p {
+  margin-bottom: 0;
+}
+
 .account-box {
   position: relative;
   display: block;
@@ -392,6 +427,7 @@ fieldset[disabled] .btn-primary.active {
 }
 .btn-xl {
   padding: 15px 30px;
+  margin: 15px 15px;
 }
 ::-moz-selection {
   color: white;
@@ -414,3 +450,87 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+/*google map css*/
+
+      #map {
+        height: 400px;
+        padding:20 50 20 50;
+        border-radius: 20px;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #description {
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+      }
+
+      #infowindow-content .title {
+        font-weight: bold;
+      }
+
+      #infowindow-content {
+        display: none;
+      }
+
+      #map #infowindow-content {
+        display: inline;
+      }
+
+      .pac-card {
+        margin: 10px 10px 0 0;
+        border-radius: 2px 0 0 2px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        outline: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        background-color: #fff;
+        font-family: Roboto;
+      }
+
+      #pac-container {
+        padding-bottom: 12px;
+        margin-right: 12px;
+      }
+
+      .pac-controls {
+        display: inline-block;
+        padding: 5px 11px;
+      }
+
+      .pac-controls label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
+
+      #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+      }
+
+      #pac-input:focus {
+        border-color: #4d90fe;
+      }
+
+      #title {
+        color: #fff;
+        background-color: #4d90fe;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+      }
+      #target {
+        width: 345px;
+      }
+

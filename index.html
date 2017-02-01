@@ -23,14 +23,8 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.min.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
 
 </head>
 
@@ -43,20 +37,17 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Your Shiz Flat?</a>
+                <a class="navbar-brand page-scroll" id="name-display" href="#page-top">Welcome To Shiz Fixer</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="#about">About Us</a>
+                        <a class="page-scroll" href="#mappage">Find Mechanic</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#account">My Account</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact Us</a>
@@ -74,19 +65,96 @@
                 <h1 id="homeHeading">When Your Shiz Goes Flat, We Got You Covered!</h1>
                 <hr>
                 <p>Car troubles? Whether your engine goes, transmission drops or your shiz just goes flat, we have got you covered.</p>
-                <a href="#about" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</a>
+                <a href="#mappage" class="btn btn-primary btn-xl page-scroll">Get Started</a>
+
             </div>
         </div>
     </header>
+    
 
-    <section class="bg-primary" id="about">
+        <!-- content goes here -->
+        <section class="bg-primary">
+            <div class="container modal-body">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 ">
+                        <form id="form">
+                            <div class="form-group">
+                                <label for="nameInput">Name</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Enter Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="phoneInput">Phone Number</label>
+                                <input type="text" class="form-control" id="phoneInput" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="emailInput">Email address</label>
+                                <input type="email" class="form-control" id="emailInput" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="carYear">Car Year</label>
+                                <input type="text" class="form-control" id="carYear" placeholder="Car Year">
+                            </div>
+                            <div class="form-group">
+                                <label for="carMake">Car Make</label>
+                                <input type="text" class="form-control" id="carMake" placeholder="Car Make">
+                            </div>
+                            <div class="form-group">
+                                <label for="carModel">Car Model</label>
+                                <input type="text" class="form-control" id="carModel" placeholder="Car Model">
+                            </div>
+                            <div class="form-group">
+                                <label for="carPart">Car Part</label>
+                                <input type="text" class="form-control" id="carPart" placeholder="Car Part">
+                            </div>
+                            <button type="submit" id="add-user" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="maps" id="mappage">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">WE'VE GOT WHAT YOU NEED!</h2>
+                    <h2 class="section-heading"><span align="center">Mechanics Around You</span></h2>
+                    <hr class="primary">
+                    <!--<input id="pac-input" class="controls" type="text">
+                    <div id="map"></div>-->
+                    <div class="searchResults"></div>
+                    <div id="map" class="controls"></div>
+                    <button id="find-btn" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</button><br>
+
+                    <div id="search-results" class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Shiz Fixers Near You</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='company-table'>
+                <thead>
+                  <tr>
+                    <th>Company Name</th>
+                    <th>Open Now</th>
+                    <th>Rating</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <h2 class="section-heading">You Can Trust Us With Your Shiz</h2>
                     <hr class="light">
-                    <p class="text-faded">Let us take away the inconvience of car troubles. We come to you, <em>wherever</em> you are! We take the hassle of dropping off and picking up your car, or worse hiring a tow truck. We can resolve your car problems without any interruption to your day! You have control over repairs and costs! </p>
-                    <a href="#services" class="page-scroll btn btn-default btn-xl sr-button">Get Started!</a>
+
+                    <p class="text-faded">Let us take away the inconvenience of car troubles. We come to you, <em>wherever</em> you are! We take the hassle of dropping off and picking up your car, or worse hiring a tow truck. We can resolve your car problems without any interruption to your day! You have control over repairs and costs! </p>
+                    <a href="#mappage" class="page-scroll btn btn-default btn-xl sr-button">Ok, I Guess I Trust You!</a>
+
                 </div>
             </div>
         </div>
@@ -97,7 +165,7 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
+                    <hr class="light">
                 </div>
             </div>
         </div>
@@ -106,8 +174,8 @@
                 <div class="col-lg-3 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-check text-primary sr-icons"></i>
-                        <h3>Certified Technichians</h3>
-                        <p class="text-muted">All of our mechanics are certifed and have excellent reviews.</p>
+                        <h3>Certified Technicians</h3>
+                        <p class="text-muted">All of our mechanics are certified and have excellent reviews.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 text-center">
@@ -139,7 +207,8 @@
         <div class="container text-center">
             <div class="call-to-action">
                 <h2>Let Us Help You When Your Shiz Goes Flat!</h2>
-                <a href="http://startbootstrap.com/template-overviews/creative/" class="btn btn-default btn-xl sr-button">HELP ME NOW!</a>
+                <a href="#mappage" class="page-scroll btn btn-default btn-xl sr-button">Find Me A Shiz Fixer</a>
+
             </div>
         </div>
     </aside>
@@ -160,6 +229,14 @@
                     <i class="fa fa-envelope-o fa-3x sr-contact"></i>
                     <p><a href="mailto:your-email@your-domain.com">customercare@yourshizmatters.com</a></p>
                 </div>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <hr class="primary">
+                    <h3>Your Shiz Admin Team</h3>
+                    <img class="shiz-team" src="img\squattyPottyJess.jpg" alt="Jessica Pankus">
+                    <img class="shiz-team" src="img\ProfilePicVictor.jpg" alt="Victor Mack">
+                    <img class="shiz-team" src="img/tHeadShot.jpg" alt="Theresa Bates">
+                    <img class="shiz-team" src="img/christina.jpeg" alt="Christina Ruc">
+                </div>
             </div>
         </div>
     </section>
@@ -177,6 +254,24 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+    
+    <!--google maps--> 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvZ6mmr-zE_3pX8xlvcmGxkH6GVVG4WBk&libraries=places&callback=initMap"  async defer></script>
+
+    <script src="js/maps.js"></script>
+    <script src="js/searchFind.js"></script>
+    <script src="js/shiz.js"></script>
+
+    <script type="text/javascript">
+    $("#add-user").on("click", function(event) {
+        event.preventDefault();
+        $("#form").hide();
+        var customerName = $("#nameInput").val().trim();
+        console.log(customerName);
+        $("#name-display").html("Welcome: " + customerName);
+
+  });
+  </script>
 
 </body>
 
