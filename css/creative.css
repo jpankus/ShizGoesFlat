@@ -11,6 +11,16 @@ body {
 body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
+tbody {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  text-align:left;
+}
+td {
+  font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
+  text-align:left;
+  width: 33%;
+}
+
 hr {
   border-color: #F05F40;
   border-width: 3px;
@@ -50,6 +60,17 @@ img.shiz-team{
   height:150px;
   border-radius: 20px;
 }
+.find-btn{
+  outline:none;
+}
+*:focus {
+    outline: none;
+}
+button:focus {
+    outline: none;
+}
+
+
 
 #search-results {
   background-color:white;

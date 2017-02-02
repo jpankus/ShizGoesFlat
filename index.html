@@ -73,7 +73,7 @@
     
 
         <!-- content goes here -->
-        <section class="bg-modal">
+        <section id="form-section" class="bg-modal">
             <div class="container modal-body">
                 <div class="row">
                     <div class="col-lg-6 col-lg-offset-2 ">
@@ -98,12 +98,8 @@
             </div>
     </section>
     
-    <section>
-    <button id="myButton" onclick="onClick()">Click to search</button>
-        <div id="map" style="height: 300px;"></div>
+    
     <section class="maps" id="mappage">
-    </section>
-        
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -113,7 +109,7 @@
                     <div id="map"></div>-->
                     <div class="searchResults"></div>
                     <div id="map" class="controls"></div>
-                    <button id="find-btn" class="btn btn-primary btn-xl page-scroll">Find Me A Shiz Fixer</button><br>
+                    <button id="find-btn" class="btn btn-primary btn-xl" onclick="onClick()">Find Me A Shiz Fixer</button><br>
 
                     <div id="search-results" class="panel panel-primary">
             <div class="panel-heading">
@@ -124,10 +120,12 @@
                 <thead>
                   <tr>
                     <th>Company Name</th>
-                    <th>Open Now</th>
+                    <th>Address</th>
                     <th>Rating</th>
                   </tr>
                 </thead>
+                <tbody>
+                </tbody>
               </table>
             </div>
           </div>
@@ -230,15 +228,30 @@
             </div>
         </div>
     </section>
+    
+            
+   <!--Firebase url-->
+    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>   
+   
+       <script>
+       // Initialize Firebase
+           var config = {
+               apiKey: "AIzaSyCUjdlK4S1kMZ_mbJPAIzY1dhfgux-Iz8U",
+               authDomain: "whentheshizgoesflat.firebaseapp.com",
+               databaseURL: "https://whentheshizgoesflat.firebaseio.com",
+               storageBucket: "whentheshizgoesflat.appspot.com",
+               messagingSenderId: "81738305817"
+           };
+           firebase.initializeApp(config);
+       </script>  
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
     
-    <!--Firebase url-->
-    <script src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
     <!-- url for map locator marker api-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>   
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/place/textsearch/json?query=auto+repair+near+charlotte&location=35.2033529,-80.980258&radius=100&key=AIzaSyDLslU-MFKTNOwNXxGO_S8_6j6Vex9Mf5k"></script>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/place/textsearch/json?query=auto+repair+near+charlotte&location=35.2033529,-80.980258&radius=100&key=AIzaSyDLslU-MFKTNOwNXxGO_S8_6j6Vex9Mf5k"></script>-->
+
     
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -256,12 +269,13 @@
 
     <script src="js/maps.js"></script>
 
-    <script src="js/shiz2.js"></script>
+   <script src="js/shiz2.js"></script>
+
 
     <script type="text/javascript">
     $("#add-user").on("click", function(event) {
         event.preventDefault();
-        $("#form").hide();
+        $("#form-section").hide();
         var customerName = $("#nameInput").val().trim();
         console.log(customerName);
         $("#name-display").html("Welcome: " + customerName);

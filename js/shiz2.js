@@ -1,3 +1,4 @@
+
 var map;
             var service;
             var infowindow;
@@ -7,7 +8,7 @@ var map;
 
                 map = new google.maps.Map(document.getElementById('map'), {
                     center: currentLocation,
-                    zoom: 15
+                    zoom: 13
                     });
 
                 var request = {
@@ -25,20 +26,38 @@ var map;
                     for (var i = 0; i < results.length; i++) {
                         var place = results[i];
                         createMarker(results[i]);
+
                     }
                 }
             }
 
             function createMarker(place) {
+                var infowindow = new google.maps.InfoWindow();
                 var placeLoc = place.geometry.location;
                 var marker = new google.maps.Marker({
                     map: map,
                     position: place.geometry.location
                 });
 
-                // TODO - you guys need to figure this one out
+        
+             var database = firebase.database();
+             database.ref().push({
+                name: place.name,
+                address: place.formatted_address
+             });       
+
                 google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.setContent(place.name);
-                    infowindow.open(map, this);
-                });
+
+                    //infowindow.setContent(place.name);
+                    //infowindow.setContent(place.address);
+                    //infowindow.open(map, this);
+                    console.log(place.name);
+                    console.log(place.formatted_address);
+                    console.log(place.rating);
+
+                    $("#company-table > thead").append("<tr><td>" + place.name + "</td><td>" + place.formatted_address + "</td><td>" +
+    place.rating + " Stars" + "</td><td>" );
+                        
+                    });                      
             }
+        
